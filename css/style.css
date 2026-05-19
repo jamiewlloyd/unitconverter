@@ -30,18 +30,40 @@ h1 {
    margin: 34px 0 0 0;
 }
 
-#unit-input {
-   width: 113px;
+/* #unit-input {
+   min-width: 93px;
+   max-width: 300px;
    height: 79px;
    border: 2px solid #B295FF;
    border-radius: 5px;
    background-color: #6943FF;
-   text-align: center;
    font-size: 58px;
    font-weight: 800;
    color: #ffffff;
    font-family: "Inter", sans-serif;
-   padding: 0;
+   padding: 0 10px;
+   display: flex;
+   align-items: center;
+} */
+
+#unit-input {
+   display: inline-block;
+   text-align: center;
+   line-height: 58px;
+   min-width: 115px;
+   max-width: 300px;
+   height: 83px;
+   border: 2px solid #B295FF;
+   border-radius: 5px;
+   background-color: #6943FF;
+   font-size: 58px;
+   font-weight: 800;
+   color: #ffffff;
+   font-family: "Inter", sans-serif;
+   padding: 10px 10px 11px 10px;
+   box-sizing: border-box;
+   overflow: hidden;
+   white-space: nowrap;
 }
 
 #convert-button {
