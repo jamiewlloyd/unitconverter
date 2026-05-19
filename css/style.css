@@ -76,6 +76,14 @@ h1 {
    margin-top: 25px;
 }
 
+#convert-button:hover {
+   cursor: pointer;
+}
+
+#convert-button:active {
+   scale: 0.98;
+}
+
 #conversions {
    height: 444px;
    width: 550px;
