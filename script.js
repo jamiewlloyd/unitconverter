@@ -7,25 +7,34 @@ const massEl = document.getElementById("mass");
 const length = {
    conversion: 3.281,
    metric: "meters",
-   imperial: "feet"
+   imperial: "feet",
+   parent: lengthEl
 }
 const volume = {
    conversion: 0.264,
    metric: "liters",
-   imperial: "gallons"
+   imperial: "gallons",
+   parent: volumeEl
 }
 const mass = {
    conversion: 2.204,
    metric: "kilos",
-   imperial: "pounds"
+   imperial: "pounds",
+   parent: massEl
 }
 
 convertBtn.addEventListener("click", () => {
+   let baseUnits = Number(textInput.innerText);
    if (textInput.innerText) {
-      let baseUnits = Number(textInput.innerText);
-      render(baseUnits, length)
-      render(baseUnits, volume)
-      render(baseUnits, mass)
+      if (Array.from(lengthEl.lastElementChild.classList).includes(`conversion`)) {
+         clearResults()
+      }
+      render(baseUnits, length);
+      render(baseUnits, volume);
+      render(baseUnits, mass);
+      textInput.innerText = ""
+   } else {
+      clearResults()
    }
 })
 
@@ -36,5 +45,11 @@ function render(units, measurement) {
    ${units} ${measurement.metric} = ${(units * measurement.conversion).toFixed(3)} ${measurement.imperial} 
    | 
    ${units} ${measurement.imperial} = ${(units / measurement.conversion).toFixed(3)} ${measurement.metric}`
-   console.log(paragraph);
+   measurement.parent.appendChild(paragraph);
+}
+
+function clearResults() {
+   lengthEl.lastElementChild.remove()
+   volumeEl.lastElementChild.remove()
+   massEl.lastElementChild.remove()
 }
