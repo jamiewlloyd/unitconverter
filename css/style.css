@@ -53,3 +53,38 @@ h1 {
    background-color: #ffffff;
    margin-top: 25px;
 }
+
+#conversions {
+   height: 444px;
+   width: 550px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 24px;
+}
+
+.units {
+   height: 108px;
+   width: 500px;
+   background-color: #ffffff;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 12px;
+}
+
+h2 {
+   font-size: 20px;
+   font-weight: 600;
+   margin: 0;
+   color: #5A537B;
+}
+
+.conversion {
+   margin: 0;
+   font-size: 14px;
+   color: #353535;
+   font-weight: 300;
+}
